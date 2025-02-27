@@ -1,0 +1,44 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: orange;
+  font-family: futurahandwritten;
+}
+
+main {
+  width: 600px;
+  height: 800px;
+  border: 5px solid black;
+  border-radius: 12px;
+  margin: auto;
+  background-color: white;
+}
+
+.main-font {
+  letter-spacing: -2px;
+  font-size: 28px;
+}
+
+.calvin-font {
+  font-family: calvin and hobbes;
+  font-size: 45px;
+  color: black;
+}
+
+/* @keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
