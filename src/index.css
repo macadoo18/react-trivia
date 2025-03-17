@@ -1,18 +1,29 @@
+* {
+  list-style-type: none;
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+}
+
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  font-family: calvin and hobbes;
+  background-color: rgba(247, 244, 215, .7);
 }
 button:hover {
-  border-color: #646cff;
+  border-color: orange;
+  background-color: orange;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+

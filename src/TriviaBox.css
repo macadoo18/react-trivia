@@ -1,0 +1,50 @@
+.trivia-start {
+  background-color: orange !important;
+}
+.trivia-start button {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.trivia-start button:hover {
+  background: rgba(234, 226, 151, 0.7);
+}
+
+.trivia-box {
+  width: 250px;
+  height: 310px;
+  border: 1px solid;
+  border-radius: 8px;
+  background-color: rgba(247, 244, 215, 0.7);
+}
+.trivia-box .question {
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.trivia-box .option {
+  text-align: left;
+  margin-left: 20px;
+  padding-bottom: 3px;
+}
+.trivia-box .option label {
+  padding-left: 5px;
+}
+.trivia-box .results {
+  mix-blend-mode: multiply;
+  padding-top: 20px;
+}
+.trivia-box .results h2 {
+  font-size: 30px;
+}
+.trivia-box .results img {
+  width: 240px;
+  padding-left: 10px;
+}
+.trivia-box .results .mad-image {
+  width: 200px;
+  padding-left: 0;
+}
+.trivia-box .results .congrats-image {
+  padding-top: 35px;
+}/*# sourceMappingURL=TriviaBox.css.map */

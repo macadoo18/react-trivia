@@ -1,0 +1,59 @@
+.trivia-start {
+  background-color: orange !important;
+  
+  button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover {
+      background: darken(rgba(247, 244, 215, .7), 15%);
+    }
+  }
+}
+
+.trivia-box {
+  width: 250px;
+  height: 310px;
+  border: 1px solid;
+  border-radius: 8px;
+  background-color: rgba(247, 244, 215, .7);
+
+  .question {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .option {
+    text-align: left;
+    margin-left: 20px;
+    padding-bottom: 3px;
+
+    label {
+      padding-left: 5px;
+    }
+  }
+
+  .results {
+    mix-blend-mode: multiply;
+    padding-top: 20px;
+
+    h2 {
+      font-size: 30px;
+    }
+    
+    img {
+      width: 240px;
+      padding-left: 10px;
+    }
+
+    .mad-image {
+      width: 200px;
+      padding-left: 0;
+    }
+
+    .congrats-image {
+      padding-top: 35px;
+    }
+  }
+}
