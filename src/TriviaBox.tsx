@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import './TriviaBox.css';
+import madImage from './assets/mad.png';
 
 interface Props {
   questions: Array<qSet>;
@@ -30,7 +31,7 @@ function TriviaBox({ questions, questionIndex, onSelection, displayResults, scor
     results = (
       <>
         <h2>Wrong</h2>
-        <img className='mad-image' src='src/assets/mad.png' alt='Wrong image' />
+        <img className='mad-image' src={madImage} alt='Wrong image' />
       </>
     );
   } else if (displayResults === 3) {
