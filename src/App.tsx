@@ -76,11 +76,14 @@ function App() {
       name = 'Next';
     }
 
-    return !switchBtn ? <Button onSubmit={handleOnSubmit} btnName='Submit' /> : <Button onNext={handleOnNext} btnName={name} />;
-  };
-
-  const displayBackBtn = () => {
-    if (questionNum > 1 && questionNum < lastQuestionIndex) return <Button btnName='Back' onBack={handleOnBack} />;
+    return !switchBtn ? (
+      <>
+        {questionNum <= lastQuestionIndex + 1 && questionNum > 1 && <Button onBack={handleOnBack} btnName='Back' />}
+        <Button onSubmit={handleOnSubmit} btnName='Submit' />
+      </>
+    ) : (
+      <Button onNext={handleOnNext} btnName={name} />
+    );
   };
 
   return (
@@ -107,7 +110,6 @@ function App() {
             onStartQuiz={handleOnStart}
           />
           <div className='btn-container'>
-            {displayBackBtn()}
             {questionNum > 0 && displayBtn()}
           </div>
         </div>
