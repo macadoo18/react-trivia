@@ -46,6 +46,11 @@ main .trivia-box-container {
 main .trivia-box-container .submit-btn {
   margin-top: 15px;
 }
+main .trivia-box-container .btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 35px 0 35px;
+}
 
 @font-face {
   font-family: CALVINO;

@@ -50,6 +50,12 @@ main {
     .submit-btn {
       margin-top: 15px;
     }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 35px 0 35px;
+    }
   }
 }
 

@@ -6,14 +6,19 @@ import QUESTIONS from './questions.json';
 
 function App() {
   const [score, setScore] = useState(0);
-  const [nextQuestionIndex, setNextQuestionIndex] = useState(0);
-  const [questionNum, setQuestionNum] = useState(1);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [questionNum, setQuestionNum] = useState(0);
   const [showResults, setShowResults] = useState(2);
   const [switchBtn, setSwitchBtn] = useState(false);
+  const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
 
   let userAnswer = '';
-  const correctAnswer = QUESTIONS[nextQuestionIndex].answer;
+  const correctAnswer = QUESTIONS[questionIndex].answer;
   const lastQuestionIndex = QUESTIONS.length - 1;
+
+  const handleOnStart = () => {
+    setQuestionNum(questionNum + 1)
+  }
 
   const handleOnSelection = (e: ChangeEvent) => {
     userAnswer = (e.target as HTMLInputElement).value;
@@ -22,6 +27,8 @@ function App() {
   const handleOnSubmit = () => {
     if (userAnswer) {
       setSwitchBtn(true);
+      setSelectedAnswers([...selectedAnswers, userAnswer]);
+      console.log('selected answer', selectedAnswers, userAnswer);
       if (userAnswer === correctAnswer) {
         setScore(score + 1);
         setShowResults(1);
@@ -37,7 +44,7 @@ function App() {
   const handleOnNext = () => {
     setQuestionNum(questionNum + 1);
     if (questionNum <= lastQuestionIndex) {
-      setNextQuestionIndex(nextQuestionIndex + 1);
+      setQuestionIndex(questionIndex + 1);
       setSwitchBtn(false);
       setShowResults(2);
     } else if (questionNum > lastQuestionIndex) {
@@ -47,9 +54,17 @@ function App() {
     if (showResults === 3) {
       setSwitchBtn(false);
       setScore(0);
-      setNextQuestionIndex(0);
+      setQuestionIndex(0);
       setQuestionNum(1);
       setShowResults(2);
+    }
+  };
+
+  const handleOnBack = () => {
+    setQuestionNum(questionNum - 1);
+    setQuestionIndex(questionIndex - 1);
+    if (selectedAnswers[questionIndex] === correctAnswer) {
+      setScore(score - 1);
     }
   };
 
@@ -61,14 +76,11 @@ function App() {
       name = 'Next';
     }
 
-    return !switchBtn ? (
-      <Button onSubmit={handleOnSubmit} btnName='Submit' />
-    ) : (
-      <Button
-        onNext={handleOnNext}
-        btnName={name}
-      />
-    );
+    return !switchBtn ? <Button onSubmit={handleOnSubmit} btnName='Submit' /> : <Button onNext={handleOnNext} btnName={name} />;
+  };
+
+  const displayBackBtn = () => {
+    if (questionNum > 1 && questionNum < lastQuestionIndex) return <Button btnName='Back' onBack={handleOnBack} />;
   };
 
   return (
@@ -88,12 +100,16 @@ function App() {
         <div className='trivia-box-container'>
           <TriviaBox
             questions={QUESTIONS}
-            questionIndex={nextQuestionIndex}
+            questionIndex={questionIndex}
             onSelection={handleOnSelection}
             displayResults={showResults}
             score={score}
+            onStartQuiz={handleOnStart}
           />
-          {displayBtn()}
+          <div className='btn-container'>
+            {displayBackBtn()}
+            {questionNum > 0 && displayBtn()}
+          </div>
         </div>
       </main>
     </>

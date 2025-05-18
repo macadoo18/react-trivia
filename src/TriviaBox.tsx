@@ -10,6 +10,7 @@ interface Props {
   onSelection: (e: ChangeEvent) => void;
   displayResults: number;
   score: number;
+  onStartQuiz: () => void;
 }
 
 interface qSet {
@@ -18,7 +19,7 @@ interface qSet {
   answer: string;
 }
 
-function TriviaBox({ questions, questionIndex, onSelection, displayResults, score }: Props) {
+function TriviaBox({ questions, questionIndex, onSelection, displayResults, score, onStartQuiz }: Props) {
   const [start, setStart] = useState(false);
   let results;
 
@@ -59,7 +60,13 @@ function TriviaBox({ questions, questionIndex, onSelection, displayResults, scor
   return (
     <>
       {!start ? (
-        <div className='trivia-start trivia-box' onClick={() => setStart(true)}>
+        <div
+          className='trivia-start trivia-box'
+          onClick={() => {
+            setStart(true);
+            onStartQuiz();
+          }}
+        >
           <button>Start</button>
         </div>
       ) : (
