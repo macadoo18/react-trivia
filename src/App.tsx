@@ -3,6 +3,11 @@ import './App.css';
 import TriviaBox from './TriviaBox';
 import Button from './Button';
 import QUESTIONS from './questions.json';
+import SELECTED_ANSWERS from './selectedAnswers.json';
+
+interface AnswersObject {
+  [key: number]: string;
+}
 
 function App() {
   const [score, setScore] = useState(0);
@@ -10,15 +15,16 @@ function App() {
   const [questionNum, setQuestionNum] = useState(0);
   const [showResults, setShowResults] = useState(2);
   const [switchBtn, setSwitchBtn] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+
+  const selectedAnswers: AnswersObject = SELECTED_ANSWERS;
 
   let userAnswer = '';
   const correctAnswer = QUESTIONS[questionIndex].answer;
   const lastQuestionIndex = QUESTIONS.length - 1;
 
   const handleOnStart = () => {
-    setQuestionNum(questionNum + 1)
-  }
+    setQuestionNum(questionNum + 1);
+  };
 
   const handleOnSelection = (e: ChangeEvent) => {
     userAnswer = (e.target as HTMLInputElement).value;
@@ -27,8 +33,8 @@ function App() {
   const handleOnSubmit = () => {
     if (userAnswer) {
       setSwitchBtn(true);
-      setSelectedAnswers([...selectedAnswers, userAnswer]);
-      console.log('selected answer', selectedAnswers, userAnswer);
+      selectedAnswers[questionIndex] = userAnswer;
+
       if (userAnswer === correctAnswer) {
         setScore(score + 1);
         setShowResults(1);
@@ -63,9 +69,8 @@ function App() {
   const handleOnBack = () => {
     setQuestionNum(questionNum - 1);
     setQuestionIndex(questionIndex - 1);
-    if (selectedAnswers[questionIndex] === correctAnswer) {
-      setScore(score - 1);
-    }
+
+    if (selectedAnswers[questionIndex - 1] === QUESTIONS[questionIndex - 1].answer) setScore(score - 1);
   };
 
   const displayBtn = () => {
@@ -109,9 +114,7 @@ function App() {
             score={score}
             onStartQuiz={handleOnStart}
           />
-          <div className='btn-container'>
-            {questionNum > 0 && displayBtn()}
-          </div>
+          <div className='btn-container'>{questionNum > 0 && displayBtn()}</div>
         </div>
       </main>
     </>
