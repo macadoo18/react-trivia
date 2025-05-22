@@ -100,7 +100,9 @@ function App() {
         </h1>
 
         <ul className='status'>
-          <li>Question: {questionNum <= lastQuestionIndex + 1 && questionNum}</li>
+          <li>
+            Question: {questionNum <= lastQuestionIndex + 1 && questionNum}/{lastQuestionIndex + 1}
+          </li>
           <li>Score: {score}</li>
         </ul>
       </header>

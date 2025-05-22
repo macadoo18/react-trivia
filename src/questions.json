@@ -67,5 +67,70 @@
     "question": "From what years was “Calvin and Hobbes” syndicated?",
     "options": ["1980 - 1985", "1985 - 1995", "1983 - 1993", "1987 - 1999"],
     "answer": "1985 - 1995"
+  },
+
+  {
+    "question": "Out of the following comics, which one did not inspire the author to write 'Calvin and Hobbes'?",
+    "options": ["Peanuts", "Krazy Kat", "Pogo", "Garfield"],
+    "answer": "Peanuts"
+  },
+
+  {
+    "question": "Who is Calvin named after?",
+    "options": ["The Author's Brother", "A sixteenth-century theologian", "The Author's Cat", "The Author's Dad"],
+    "answer": "A sixteenth-century theologian"
+  },
+
+  {
+    "question": "What are the names of Calvin's parents?",
+    "options": ["Sue and Jasper", "Their names were never mentioned", "Wanda and Darryl", "Andy and Roger"],
+    "answer": "Their names were never mentioned"
+  },
+
+  {
+    "question": "Where did Susie Derkins' last name come from?",
+    "options": [
+      "The author's best friend",
+      "The author's cat",
+      "The author's nickname in high school",
+      "The nickname of the author's wife's family dog"
+    ],
+    "answer": "The nickname of the author's wife's family dog"
+  },
+
+  {
+    "question": "Who is Moe?",
+    "options": ["Calvin's cousin", "Calvin's best friend", "A bully at Calvin's school", "Calvin's babysitter"],
+    "answer": "A bully at Calvin's school"
+  },
+
+  {
+    "question": "In the first \"Calvin and Hobbes\" strip, what kind of bait did Calvin put in his trap?",
+    "options": ["Worms", "A carrot", "A tuna fish sandwich", "A bowl of chowder"],
+    "answer": "A tuna fish sandwich"
+  },
+
+  {
+    "question": "When Calvin duplicated himself the first time, how many Calvins, including the original, were there altogether?",
+    "options": ["6", "5", "3", "62"],
+    "answer": "6"
+  },
+
+  {
+    "question": "When Calvin duplicated himself the first time, what did he end up turning all his duplicates into?",
+    "options": ["A bowl of chowder", "Worms", "Peanuts", "Rocks"],
+    "answer": "Worms"
+  },
+
+  {
+    "question": "How long in advanced do Sunday strips have to be drawn to get color plates?",
+    "options": ["2 months", "2 days", "2 weeks", "6 weeks"],
+    "answer": "2 months"
+  },
+
+  {
+    "question": "What planet did Susie and Calvin get assigned to research?",
+    "options": ["Saturn", "Mars", "Mercury", "Jupiter"],
+    "answer": "Mercury"
   }
 ]
